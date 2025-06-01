@@ -92,6 +92,46 @@ map("n", "<leader>ul", "<cmd>lua vim.wo.number = true; vim.wo.relativenumber = n
 map("n", "<leader>fm", "gg=G<C-o>", { desc = "Format document" })
 
 --------------------------------------------------------------------------------
+-- Snacks.nvim notifications
+--------------------------------------------------------------------------------
+
+-- Test different types of snacks notifications
+map("n", "<leader>tni", function()
+  notify.info("This is an info message", "Information")
+end, { desc = "Test info notification" })
+
+map("n", "<leader>tnw", function()
+  notify.warn("This is a warning message", "Warning")
+end, { desc = "Test warning notification" })
+
+map("n", "<leader>tne", function()
+  notify.error("This is an error message", "Error")
+end, { desc = "Test error notification" })
+
+map("n", "<leader>tns", function()
+  notify.success("This is a success message", "Success")
+end, { desc = "Test success notification" })
+
+map("n", "<leader>tnd", function()
+  notify.debug("This is a debug message", "Debug")
+end, { desc = "Test debug notification" })
+
+-- Test notification with animation
+map("n", "<leader>tna", function()
+  local snacks = require("snacks")
+  for i = 1, 3 do
+    vim.schedule(function()
+      snacks.alert({
+        title = "Notification " .. i,
+        message = "This is notification number " .. i,
+        duration = 3000,
+        type = ({ "info", "warning", "success" })[i],
+      })
+    end)
+  end
+end, { desc = "Test animated notifications" })
+
+--------------------------------------------------------------------------------
 -- Placeholders for future plugins
 --------------------------------------------------------------------------------
 

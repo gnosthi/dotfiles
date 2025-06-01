@@ -29,5 +29,5 @@ require("config.keymaps")
 require("config.autocmds")
 
 -- Initialize lazy.nvim and load plugins
-require("plugins")
+require("plugins").setup()
 
