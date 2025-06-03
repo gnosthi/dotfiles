@@ -128,7 +128,7 @@ zinit snippet OMZL::clipboard.zsh
 # Initialize Oh My Posh
 if command -v oh-my-posh &> /dev/null; then
     # You can change the theme by modifying the path to the theme file
-    eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/dracula.omp.json)"
+    eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/montys.omp.json)"
 else
     echo "Oh My Posh is not installed. To install it, run:"
     echo "curl -s https://ohmyposh.dev/install.sh | bash"
